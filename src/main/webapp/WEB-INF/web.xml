@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<web-app>
+    <display-name>Archetype Created Web Application</display-name>
+
+    <servlet>
+        <servlet-name>ServletController</servlet-name>
+        <servlet-class>by.makhavenka.task.servlet.ServletController</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>ServletController</servlet-name>
+        <url-pattern>/servlet</url-pattern>
+    </servlet-mapping>
+
+    <filter>
+        <filter-name>EncodingFilter</filter-name>
+        <filter-class>by.makhavenka.task.filter.EncodingFilter</filter-class>
+            <init-param>
+                <param-name>encoding</param-name>
+                <param-value>UTF-8</param-value>
+            </init-param>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>EncodingFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
+    <error-page>
+        <error-code>404</error-code>
+        <location>/jsp/errorpage/error404.jsp</location>
+    </error-page>
+
+
+
+</web-app>
