@@ -1,5 +1,7 @@
 package by.makhavenka.task.servlet;
 
+import by.makhavenka.task.exception.CommandException;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.util.*;
@@ -69,8 +71,10 @@ public class RequestController {
     }
 
 
-    public String getParameter(String key){
-        return  requestParameters.get(key)[0];
+    public String getParameter(String key)  {
+
+            return  requestParameters.get(key)[0];
+
     }
 
     public Object getSessionAttribute(String attributeName){

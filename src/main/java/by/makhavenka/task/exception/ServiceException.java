@@ -1,5 +1,8 @@
 package by.makhavenka.task.exception;
 
+/**
+ * Handles service layer excepions
+ */
 public class ServiceException extends Exception {
 
     public ServiceException(){}

@@ -7,6 +7,7 @@ public class TypeValidator {
     private TypeValidator(){}
     public static boolean validate(String type){
         boolean result = false;
+        if(type==null){return result;}
         Pattern needed = Pattern.compile(ConstantValidator.TEXT_PATTERN);
         Matcher matcher = needed.matcher(type);
         if(type.length()<=20 && matcher.find()==true){

@@ -9,6 +9,14 @@ import by.makhavenka.task.exception.ServiceException;
 import by.makhavenka.task.service.DownloadeService;
 
 public class DownlodeServiceImpl implements DownloadeService {
+    /**
+     * method downlodes image title
+     * use ImageDaoImpl class and HeroDaoImpl,
+     * methods: findCommentById,addImageHero
+     * @param id
+     * @return String
+     * @throws ServiceException
+     */
     @Override
     public String downlodeHeroImage(int id) throws ServiceException {
         ImageDaoImpl dao = new ImageDaoImpl();

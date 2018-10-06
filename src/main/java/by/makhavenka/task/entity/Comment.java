@@ -1,5 +1,10 @@
 package by.makhavenka.task.entity;
 
+/**
+ * Comment class.Contains  int id,
+ * String content, int deleted , int userId,
+ * int heroId.
+ */
 public class Comment extends Entity {
     private int id;
     private String Content;

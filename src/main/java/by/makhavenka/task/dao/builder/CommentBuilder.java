@@ -9,6 +9,12 @@ import java.sql.SQLException;
 
 public class CommentBuilder {
 
+    /**
+     * Build object comment from result set.
+     * @param set
+     * @return comment
+     * @throws DAOException
+     */
     public Comment build(ResultSet set) throws DAOException{
         Comment comment = new Comment();
         try {

@@ -2,6 +2,9 @@ package by.makhavenka.task.poolconnection;
 
 import java.util.ResourceBundle;
 
+/**
+ * initialization of variables for the database
+ */
 class DbConfig {
 
     private static final String RESOURCE_PATH="databaseParameters";

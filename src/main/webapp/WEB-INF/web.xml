@@ -27,8 +27,27 @@
     </filter-mapping>
 
     <error-page>
+        <error-code>403</error-code>
+        <location>/jsp/errorpage/error403.jsp</location>
+    </error-page>
+
+    <error-page>
         <error-code>404</error-code>
         <location>/jsp/errorpage/error404.jsp</location>
+    </error-page>
+
+    <error-page>
+        <error-code>414</error-code>
+        <location>/jsp/errorpage/error414.jsp</location>
+    </error-page>
+
+    <error-page>
+        <error-code>504</error-code>
+        <location>/jsp/errorpage/error504.jsp</location>
+    </error-page>
+    <error-page>
+        <error-code>500</error-code>
+        <location>/jsp/errorpage/error500.jsp</location>
     </error-page>
 
 

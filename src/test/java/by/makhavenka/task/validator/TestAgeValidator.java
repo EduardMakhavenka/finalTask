@@ -28,4 +28,10 @@ public class TestAgeValidator {
         String testAge = "";
         Assert.assertEquals(AgeValidator.validate(testAge),true);
     }
+
+    @Test
+    public void testFiveValidate(){
+        String testAge = null;
+        Assert.assertEquals(AgeValidator.validate(testAge),false);
+    }
 }

@@ -1,0 +1,15 @@
+by.makhavenka.task.command
+by.makhavenka.task.command.impl
+by.makhavenka.task.customtag
+by.makhavenka.task.dao
+by.makhavenka.task.dao.builder
+by.makhavenka.task.dao.impl
+by.makhavenka.task.entity
+by.makhavenka.task.exception
+by.makhavenka.task.filter
+by.makhavenka.task.language
+by.makhavenka.task.poolconnection
+by.makhavenka.task.service
+by.makhavenka.task.service.impl
+by.makhavenka.task.servlet
+by.makhavenka.task.validator

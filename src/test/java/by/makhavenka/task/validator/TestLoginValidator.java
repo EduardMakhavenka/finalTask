@@ -34,4 +34,10 @@ public class TestLoginValidator {
         String testLogin= "";
         Assert.assertEquals(LoginValidator.validate(testLogin),false);
     }
+
+    @Test
+    public  void testSixValidate(){
+        String testLogin= null;
+        Assert.assertEquals(LoginValidator.validate(testLogin),false);
+    }
 }

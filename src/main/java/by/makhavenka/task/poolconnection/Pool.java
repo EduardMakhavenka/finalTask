@@ -12,7 +12,9 @@ import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.locks.ReentrantLock;
 
-
+/**
+ * Connection pool for operations with freeConnections.
+ */
 public class Pool {
 
     private static final Logger LOGGER=LogManager.getLogger(Pool.class);
@@ -31,6 +33,11 @@ public class Pool {
        createPool();
     }
 
+    /**
+     * Returns instance of the connection pool.
+     *
+     * @return Pool
+     */
     public static Pool getInstance(){
             if(!instanceCreated.get()) {
                 lock.lock();
@@ -69,9 +76,13 @@ public class Pool {
         }
     }
 
+    /**
+     * close all connection
+     */
     public void clearConnectionQueues(){
             closeConnectionQueue();
     }
+
 
     private void closeConnectionQueue(){
         try {
@@ -97,6 +108,10 @@ public class Pool {
         }
     }
 
+    /**
+     * take free connection from poll
+     * @return ConnectionProxy
+     */
     public ConnectionProxy takeConnection(){
        ConnectionProxy connection=null;
        try{
@@ -108,6 +123,10 @@ public class Pool {
        return connection;
     }
 
+    /**
+     * release connectin to pool
+     * @param connection
+     */
     public void releaseConnection(ConnectionProxy connection){
         try {
             if(connection.isClosed()){ throw  new SQLException("Close closen connection");}

@@ -15,6 +15,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
+/**
+ * The class receives and invokes approprite commands
+ */
 public class ServletController extends HttpServlet {
 
     private static final Logger LOGGER=LogManager.getLogger(ServletController.class);
@@ -38,7 +41,9 @@ public class ServletController extends HttpServlet {
     }
 
     private void processRequest(HttpServletRequest request,HttpServletResponse response) throws ServletException, IOException{
+
         RequestController content = new RequestController(request);
+
         Command command = null;
         try {
             command = CommandFactory.defineCommand(content);

@@ -7,6 +7,7 @@ public class SurnameValidator {
     private SurnameValidator(){}
     public static boolean validate(String surname){
         boolean result = false;
+        if(surname==null){return result;}
         Pattern needed = Pattern.compile(ConstantValidator.TEXT_PATTERN);
         Matcher matcher = needed.matcher(surname);
         if(surname.length()<=20 && matcher.find()==true){

@@ -7,7 +7,7 @@
 <p>Whoops, looks like something went wrong...</p>
 <p>500</p>
 <p>Server Error!</p>
-<a href="../Home.jsp">Go main page!</a>
+<a href="../jsp/Home.jsp">Go main page!</a>
 </body>
 
 </html>

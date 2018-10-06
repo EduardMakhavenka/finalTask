@@ -1,5 +1,9 @@
 package by.makhavenka.task.entity;
 
+/**
+ * abstract class entity.
+ * Contains int id.
+ */
 public abstract class Entity {
     private int id;
 

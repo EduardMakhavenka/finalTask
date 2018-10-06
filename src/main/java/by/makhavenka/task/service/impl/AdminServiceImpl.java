@@ -20,6 +20,14 @@ import by.makhavenka.task.validator.TypeValidator;
 import java.util.*;
 
 public class AdminServiceImpl implements AdminService {
+
+    /**
+     * method blocks user's account by user id.
+     * use userDaoImpl class , method deletedById
+     * @param content
+     * @return String
+     * @throws ServiceException
+     */
     @Override
     public String blockAccount(RequestController content) throws ServiceException {
         int id= Integer.parseInt(content.getParameter(ServiceConstants.ID_USER));
@@ -32,6 +40,14 @@ public class AdminServiceImpl implements AdminService {
         return ServiceConstants.HOME;
     }
 
+    /**
+     * method deletes comment by comment id and hero id.
+     * use HeroDaoImpl  and  CommentDaoImpl classes,
+     * methods: deletedById, findAllCommentsByHeroId
+     * @param content
+     * @return String
+     * @throws ServiceException
+     */
     @Override
     public String deleteComment(RequestController content) throws ServiceException {
         int commentId = Integer.parseInt(content.getParameter(ServiceConstants.ID_COMMENT));
@@ -57,6 +73,13 @@ public class AdminServiceImpl implements AdminService {
     }
 
 
+    /**
+     * method unblocks user's account by user id.
+     * use userDaoImpl class , method restoreById
+     * @param content
+     * @return String
+     * @throws ServiceException
+     */
     @Override
     public String unBlockAccount(RequestController content) throws ServiceException {
         int id= Integer.parseInt(content.getParameter(ServiceConstants.ID_BANS_USER));
@@ -71,6 +94,13 @@ public class AdminServiceImpl implements AdminService {
     }
 
 
+    /**
+     * method deletes hero by hero id.
+     * use heroDaoImpl class , method deletedById
+     * @param content
+     * @return String
+     * @throws ServiceException
+     */
     @Override
     public String deleteHero(RequestController content) throws ServiceException {
         int heroId =  Integer.parseInt(content.getParameter(ServiceConstants.ID_HERO));
@@ -83,6 +113,13 @@ public class AdminServiceImpl implements AdminService {
         return ServiceConstants.HOME;
     }
 
+    /**
+     * method edits hero by hero id.
+     * use heroDaoImpl class , methods: findById, update
+     * @param content
+     * @return String
+     * @throws ServiceException
+     */
     @Override
     public String editHero(RequestController content) throws ServiceException {
         boolean resultOfValidation=true;
@@ -125,6 +162,13 @@ public class AdminServiceImpl implements AdminService {
         return ServiceConstants.HOME;
     }
 
+    /**
+     * method addds hero by hero id.
+     * use heroDaoImpl class , methods: add
+     * @param content
+     * @return String
+     * @throws ServiceException
+     */
     @Override
     public String addHero(RequestController content) throws ServiceException {
         boolean resultOfValidation=true;
@@ -163,6 +207,13 @@ public class AdminServiceImpl implements AdminService {
         return ServiceConstants.ADMIN_PAGE;
     }
 
+    /**
+     * method shows list banned users.
+     * use userDaoImpl class , methods: findAll()
+     * @param content
+     * @return String
+     * @throws ServiceException
+     */
     @Override
     public String showBannedUsers(RequestController content) throws ServiceException {
         Dao dao = new UserDaoImpl();
@@ -182,6 +233,13 @@ public class AdminServiceImpl implements AdminService {
         return ServiceConstants.BANNED_LIST;
     }
 
+    /**
+     * method shows list deleted comments.
+     * use commentDaoImpl class , methods: dao.findAll()
+     * @param content
+     * @return String
+     * @throws ServiceException
+     */
     @Override
     public String showDeletedComments(RequestController content) throws ServiceException {
         Dao dao = new CommentDaoImpl();
@@ -203,6 +261,13 @@ public class AdminServiceImpl implements AdminService {
         return ServiceConstants.DELETED_COMMENTS;
     }
 
+    /**
+     * method shows list deleted heroes.
+     * use heroDaoImpl class , methods: findAllDeleted()
+     * @param content
+     * @return String
+     * @throws ServiceException
+     */
     @Override
     public String showDeletedHeroes(RequestController content) throws ServiceException {
         Dao dao = new HeroDaoImpl();
@@ -216,6 +281,13 @@ public class AdminServiceImpl implements AdminService {
         return ServiceConstants.DELETED_HEROES;
     }
 
+    /**
+     * method shows list active users.
+     * use userDaoImpl class , methods: findAll()
+     * @param content
+     * @return String
+     * @throws ServiceException
+     */
     @Override
     public String showUsers(RequestController content) throws ServiceException {
         Dao dao = new UserDaoImpl();
@@ -235,6 +307,13 @@ public class AdminServiceImpl implements AdminService {
         return ServiceConstants.USER_LIST;
     }
 
+    /**
+     * method restores hero from database.
+     * use heroDaoImpl class , methods: restoreById
+     * @param content
+     * @return String
+     * @throws ServiceException
+     */
     @Override
     public String restoreHero(RequestController content) throws ServiceException {
         int heroId = Integer.parseInt(content.getParameter(ServiceConstants.ID_DELETED_HERO));

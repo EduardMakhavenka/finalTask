@@ -56,6 +56,12 @@ public class HeroDaoImpl implements HeroDao {
             "hero.id = image.hero_id WHERE hero.id = (?) ";
 
 
+    /**
+     * find a hero and all his comments by hero id
+     * @param id
+     * @return Map<Hero,ArrayList<Comment>>
+     * @throws DAOException
+     */
     public Map<Hero,ArrayList<Comment>> findAllCommentsByHeroId(int id) throws DAOException{
         Hero hero = new Hero();
         Comment comment ;
@@ -80,6 +86,12 @@ public class HeroDaoImpl implements HeroDao {
         return result;
     }
 
+    /**
+     * find title imade from database
+     * @param id
+     * @return String
+     * @throws DAOException
+     */
     public String findImage(int id) throws DAOException {
         String image= null;
         try(ConnectionProxy connectionProxy = Pool.getInstance().takeConnection();
@@ -95,6 +107,12 @@ public class HeroDaoImpl implements HeroDao {
         return image;
     }
 
+    /**
+     * find hero by id in database
+     * @param id
+     * @return
+     * @throws DAOException
+     */
     @Override
     public Hero findById(int id) throws DAOException {
         Hero hero= null;
@@ -113,6 +131,12 @@ public class HeroDaoImpl implements HeroDao {
     }
 
 
+    /**
+     *
+     * @param name
+     * @return list <hero>
+     * @throws DAOException
+     */
     public List<Hero> searchByName(String name) throws DAOException {
         Hero hero;
         List<Hero> heroes= new ArrayList<>();
@@ -131,6 +155,11 @@ public class HeroDaoImpl implements HeroDao {
         return heroes;
     }
 
+    /**
+     * select all hero from database
+     * @return  List<Hero>
+     * @throws DAOException
+     */
     @Override
     public List<Hero> findAll() throws DAOException {
         List<Hero> result = new ArrayList<>();
@@ -149,6 +178,11 @@ public class HeroDaoImpl implements HeroDao {
         return result;
     }
 
+    /**
+     * add hero to database
+     * @param entity
+     * @throws DAOException
+     */
     @Override
     public void add(Entity entity) throws DAOException {
         Hero hero = (Hero)entity;
@@ -165,6 +199,11 @@ public class HeroDaoImpl implements HeroDao {
         }
     }
 
+    /**
+     * marks a hero as deleted
+     * @param id
+     * @throws DAOException
+     */
     @Override
     public void deleteById(int id) throws DAOException {
         try(ConnectionProxy connectionProxy = Pool.getInstance().takeConnection();
@@ -177,6 +216,11 @@ public class HeroDaoImpl implements HeroDao {
         }
     }
 
+    /**
+     * restore hero by id
+     * @param id
+     * @throws DAOException
+     */
     public void restoreById(int id) throws DAOException {
         try(ConnectionProxy connectionProxy = Pool.getInstance().takeConnection();
             PreparedStatement statement = connectionProxy.prepareStatement(RESTORE_HERO_BY_ID)){
@@ -188,6 +232,11 @@ public class HeroDaoImpl implements HeroDao {
         }
     }
 
+    /**
+     * find all deleted heroes
+     * @return  List<Hero>
+     * @throws DAOException
+     */
     public List<Hero> findAllDeleted() throws DAOException{
         List<Hero> result = new ArrayList<>();
         Hero  hero ;
@@ -205,6 +254,11 @@ public class HeroDaoImpl implements HeroDao {
         return result;
     }
 
+    /**
+     * update hero in database
+     * @param hero
+     * @throws DAOException
+     */
     public void update(Hero hero) throws DAOException{
         try(ConnectionProxy connectionProxy = Pool.getInstance().takeConnection();
             PreparedStatement statement = connectionProxy.prepareStatement(UPDATE_HERO)){

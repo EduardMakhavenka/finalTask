@@ -9,6 +9,9 @@ import java.util.Properties;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.Executor;
 
+/**
+ *connection wrapped in a connecting proxy to expand functionality and limit access
+ */
 public class ConnectionProxy implements Connection {
 
      public static final Logger LOGGER=LogManager.getLogger(ConnectionProxy.class);

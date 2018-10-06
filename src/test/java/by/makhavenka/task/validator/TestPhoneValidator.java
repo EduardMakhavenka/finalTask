@@ -16,4 +16,10 @@ public class TestPhoneValidator {
         String test = "+375fdf-2sdds9-760-dfd45-11";
         Assert.assertEquals(PhoneValidator.validate(test),false);
     }
+
+    @Test
+    public void testThreeValidator(){
+        String test = null;
+        Assert.assertEquals(PhoneValidator.validate(test),false);
+    }
 }

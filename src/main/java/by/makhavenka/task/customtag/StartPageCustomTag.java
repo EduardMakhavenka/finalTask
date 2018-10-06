@@ -29,6 +29,11 @@ public class StartPageCustomTag extends TagSupport {
         this.locale = locale;
     }
 
+    /**
+     * Create new custom tag
+     * @return
+     * @throws JspException
+     */
     @Override
     public int doStartTag() throws JspException {
         String tag;

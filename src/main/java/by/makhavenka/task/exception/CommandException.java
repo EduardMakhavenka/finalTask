@@ -1,5 +1,8 @@
 package by.makhavenka.task.exception;
 
+/**
+ * Handles command layer excepions
+ */
 public class CommandException extends Exception {
     public CommandException(){}
 

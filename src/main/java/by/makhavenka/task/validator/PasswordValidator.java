@@ -7,7 +7,7 @@ public class PasswordValidator {
     private PasswordValidator(){}
     public static boolean validate(String password){
         boolean result = false;
-
+        if(password==null){return result;}
         Pattern needed = Pattern.compile(ConstantValidator.UNIVERSAL_PATTERN);
         Matcher matcher = needed.matcher(password);
         if(password.length()<=20 && matcher.find()==true){

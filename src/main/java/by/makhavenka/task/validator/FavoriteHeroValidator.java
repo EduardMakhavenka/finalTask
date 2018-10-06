@@ -7,6 +7,7 @@ public class FavoriteHeroValidator {
     private FavoriteHeroValidator(){}
     public static boolean validate(String hero){
         boolean result = false;
+        if(hero==null){return result;}
         Pattern needed = Pattern.compile(ConstantValidator.TEXT_PATTERN);
         Matcher matcher = needed.matcher(hero);
         if(hero.length()<=20 && matcher.find()==true){

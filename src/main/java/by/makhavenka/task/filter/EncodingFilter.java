@@ -3,6 +3,9 @@ package by.makhavenka.task.filter;
 import javax.servlet.*;
 import java.io.IOException;
 
+/**
+ * Filter encodes data to UTF-8
+ */
 public class EncodingFilter implements Filter {
 
     private static final String ENCODING = "encoding";

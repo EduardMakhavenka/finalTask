@@ -14,6 +14,12 @@ public class ImageDaoImpl {
 
     public static final String ADD_IMAGE="INSERT into finaldb20.image (image,hero_id) values (?,?);";
 
+    /**
+     * add title heroes image to database
+     * @param name
+     * @param id
+     * @throws DAOException
+     */
     public void addImageHero(String name,int id) throws DAOException{
         try(ConnectionProxy connectionProxy = Pool.getInstance().takeConnection();
             PreparedStatement statement = connectionProxy.prepareStatement(ADD_IMAGE,Statement.RETURN_GENERATED_KEYS)) {

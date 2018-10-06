@@ -12,12 +12,19 @@ import java.util.ArrayList;
 
 @WebFilter( urlPatterns = {"/jsp/*"})
 
+/**
+ * filter restricts access to pages by roles
+ */
 public class PageSecurityFilter implements Filter {
 
     private ArrayList<String> prohibitedPageForUser = new ArrayList<>();
     private ArrayList<String> prohibitedPageForVisitor = new ArrayList<>();
     private ArrayList<String> prohibitedPageForAll = new ArrayList<>();
 
+    /**
+     * adds pages to levels lists
+     * @param filterConfig
+     */
     @Override
     public void init(FilterConfig filterConfig){
         prohibitedPageForUser.add(FilterConstant.HEADER_JSP);
@@ -39,6 +46,14 @@ public class PageSecurityFilter implements Filter {
         prohibitedPageForAll.add(FilterConstant.DESCRIPTION_HERO_JSP);
      }
 
+    /**
+     * restricts access to the page by roles
+     * @param servletRequest
+     * @param servletResponse
+     * @param filterChain
+     * @throws IOException
+     * @throws ServletException
+     */
     @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain)
             throws IOException, ServletException {

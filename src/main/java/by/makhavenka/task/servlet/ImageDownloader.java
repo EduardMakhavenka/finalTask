@@ -18,7 +18,9 @@ import java.io.IOException;
 
 @WebServlet(urlPatterns = "/uploadImage")
 @MultipartConfig(fileSizeThreshold = 1024*1024,maxFileSize = 1024*1024*5,maxRequestSize = 1024*1024*5*5)
-
+/**
+ * class ImageDownloader downloades images
+ */
 public class ImageDownloader extends HttpServlet {
     private static final String UPLOAD_DIR = "img";
     private static final String ERROR_500 = "/jsp/errorpage/error500.jsp";

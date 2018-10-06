@@ -5,6 +5,9 @@ import by.makhavenka.task.service.ServiceConstants;
 import java.util.Locale;
 import java.util.ResourceBundle;
 
+/**
+ * locale installation class
+ */
 public class ConfigLocale {
 
     private String sessionLocale;
@@ -14,6 +17,10 @@ public class ConfigLocale {
         this.sessionLocale=sessionLocale;
     }
 
+    /**
+     * sets the locale or changes
+     * @param sessionLocale
+     */
     public void setResourceBundle(String sessionLocale){
         if(sessionLocale!=null){
             if(sessionLocale.equals(ServiceConstants.FR)){

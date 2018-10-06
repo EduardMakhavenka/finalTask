@@ -23,8 +23,7 @@ public class CommandFactory {
     public static Command defineCommand(RequestController content) throws CommandException {
         Command command = null;
         String actionCommand = content.getParameter(COMMAND_PARAM);
-
-        if (actionCommand == null) {
+        if (actionCommand==null) {
             throw  new CommandException("Command null error");
         }
 

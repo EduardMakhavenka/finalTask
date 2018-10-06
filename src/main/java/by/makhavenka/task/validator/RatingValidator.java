@@ -7,6 +7,7 @@ public class RatingValidator {
     private RatingValidator(){}
     public static boolean validate(String rating){
         boolean result = false;
+        if(rating==null){return result;}
         Pattern needed = Pattern.compile(ConstantValidator.RATING_PATTERN);
         Matcher matcher = needed.matcher(rating);
         if(rating.length()<=4 && matcher.find()==true){

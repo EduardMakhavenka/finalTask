@@ -16,4 +16,10 @@ public class TestEmailValidator {
         String test = "111112222233333444445555566666";
         Assert.assertEquals(EmailValidator.validate(test),true);
     }
+
+    @Test
+    public void testThreeValidator(){
+        String test = null;
+        Assert.assertEquals(EmailValidator.validate(test),false);
+    }
 }

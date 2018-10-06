@@ -1,5 +1,8 @@
 package by.makhavenka.task.exception;
 
+/**
+ * Handles dao layer excepions
+ */
 public class DAOException extends Exception {
 
     public DAOException(){}

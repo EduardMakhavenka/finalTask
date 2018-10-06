@@ -28,4 +28,10 @@ public class TestNameHeroValidator {
         String test ="";
         Assert.assertEquals(NameHeroValidator.validate(test),true);
     }
+
+    @Test
+    public void testFiveValidator(){
+        String test =null;
+        Assert.assertEquals(NameHeroValidator.validate(test),false);
+    }
 }

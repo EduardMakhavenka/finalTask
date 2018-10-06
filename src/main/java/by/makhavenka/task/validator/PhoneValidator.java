@@ -7,6 +7,7 @@ public class PhoneValidator {
     private PhoneValidator(){}
     public static boolean validate(String phone){
         boolean result = false;
+        if(phone==null){return result;}
         Pattern needed = Pattern.compile(ConstantValidator.PHONE_PATTERN);
         Matcher matcher = needed.matcher(phone);
         if(phone.length()<=20 && matcher.find()==true){

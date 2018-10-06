@@ -15,6 +15,13 @@ import java.util.ResourceBundle;
 
 public class UserServiceImpl implements UserService {
 
+    /**
+     * method ups user rating
+     * use  UserDaoImpl class, method:findById
+     * @param content
+     * @return String
+     * @throws ServiceException
+     */
     @Override
     public String upUserRating(RequestController content) throws ServiceException {
         int id= Integer.parseInt(content.getParameter(ServiceConstants.ID_USER));
@@ -33,6 +40,13 @@ public class UserServiceImpl implements UserService {
         return ServiceConstants.AUTHOR_PROFILE;
     }
 
+    /**
+     * method downs user rating
+     * use  UserDaoImpl class, method:findById
+     * @param content
+     * @return String
+     * @throws ServiceException
+     */
     @Override
     public String downUserRating(RequestController content) throws ServiceException {
         int id= Integer.parseInt(content.getParameter(ServiceConstants.ID_USER));
@@ -51,6 +65,13 @@ public class UserServiceImpl implements UserService {
         return ServiceConstants.AUTHOR_PROFILE;
     }
 
+    /**
+     * method edits user profile
+     * use  UserDaoImpl class, method:findById
+     * @param content
+     * @return String
+     * @throws ServiceException
+     */
     @Override
     public String editProfile(RequestController content) throws ServiceException {
         boolean resultOfValidation = true;
@@ -124,6 +145,13 @@ public class UserServiceImpl implements UserService {
         }
     }
 
+    /**
+     * method check in user
+     * use  UserDaoImpl class, method: findLoginAndPassword
+     * @param content
+     * @return String
+     * @throws ServiceException
+     */
     @Override
     public String login(RequestController content) throws ServiceException {
         boolean resultOfValidation  = true;

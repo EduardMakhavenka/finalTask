@@ -10,6 +10,12 @@ import java.sql.SQLException;
 
 public class HeroBuilder {
 
+    /**
+     * build hero object from result set
+     * @param set
+     * @return hero
+     * @throws DAOException
+     */
     public Hero buildHero(ResultSet set) throws DAOException{
         Hero hero = new Hero();
         try {
@@ -26,6 +32,13 @@ public class HeroBuilder {
         return hero;
     }
 
+    /**
+     * fill statement from object hero
+     * @param hero
+     * @param statement
+     * @return preparedststement
+     * @throws DAOException
+     */
     public PreparedStatement fillStatement(Hero hero, PreparedStatement statement) throws DAOException{
         try {
             statement.setString(1, hero.getName());

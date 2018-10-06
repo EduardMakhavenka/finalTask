@@ -8,6 +8,7 @@ public class LoginValidator {
 
     public static boolean validate(String login){
         boolean result = false;
+        if(login==null){return result;}
         Pattern needed = Pattern.compile(ConstantValidator.UNIVERSAL_PATTERN);
         Matcher matcher = needed.matcher(login);
         if(login.length()<=20 && matcher.find()==true){

@@ -1,5 +1,12 @@
 package by.makhavenka.task.entity;
 
+
+/**
+ * public class user extends entity.
+ * Contains int id,String name,String surname,String login,String mail,
+ * String password,int rating,int banned,String role,String photo,
+ * String phone,String sex,int age,String favotiteHero,String nickName;
+ */
 public class User extends Entity {
     private int id;
     private String name;

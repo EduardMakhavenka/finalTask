@@ -5,6 +5,7 @@ public class EmailValidator {
     private EmailValidator(){}
     public static boolean validate(String email){
         boolean result = false;
+        if(email==null){return result;}
         if(email.length()<=30){
                 result= true;
         }

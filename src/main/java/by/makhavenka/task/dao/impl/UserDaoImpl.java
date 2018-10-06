@@ -44,7 +44,11 @@ public class UserDaoImpl implements UserDao {
             "rating,banned,role,photo,phone,sex,age,favoritehero,nickname FROM finaldb20.user " +
             "WHERE id = ? ";
 
-
+    /**
+     * update user in database
+     * @param user
+     * @throws DAOException
+     */
     public void update(User user) throws DAOException{
         try(ConnectionProxy connectionProxy = Pool.getInstance().takeConnection();
             PreparedStatement statement = connectionProxy.prepareStatement(UPDATE)){
@@ -57,6 +61,13 @@ public class UserDaoImpl implements UserDao {
         }
     }
 
+    /**
+     * return user by login and password
+     * @param login
+     * @param password
+     * @return user
+     * @throws DAOException
+     */
     public User findLoginAndPassword(String login,String password) throws DAOException {
         User user = null;
         try(ConnectionProxy connectionProxy = Pool.getInstance().takeConnection();
@@ -76,6 +87,12 @@ public class UserDaoImpl implements UserDao {
         return user;
     }
 
+    /**
+     * find user by login and return
+     * @param login
+     * @return user
+     * @throws DAOException
+     */
     public User findByLogin(String login) throws DAOException {
         User user = null;
         try(ConnectionProxy connectionProxy = Pool.getInstance().takeConnection();
@@ -92,6 +109,12 @@ public class UserDaoImpl implements UserDao {
         return user;
     }
 
+    /**
+     * find user by id and return
+     * @param id
+     * @return object user
+     * @throws DAOException
+     */
     @Override
     public User findById(int id) throws DAOException {
         User user = null;
@@ -109,6 +132,11 @@ public class UserDaoImpl implements UserDao {
         return user;
     }
 
+    /**
+     * find all users from database
+     * @return  List<User>
+     * @throws DAOException
+     */
     @Override
     public List findAll() throws DAOException {
         User user ;
@@ -127,6 +155,11 @@ public class UserDaoImpl implements UserDao {
         return users;
     }
 
+    /**
+     * add user to database
+     * @param entity
+     * @throws DAOException
+     */
     @Override
     public void add(Entity entity) throws DAOException {
         User user = (User)entity;
@@ -148,6 +181,11 @@ public class UserDaoImpl implements UserDao {
     }
 
 
+    /**
+     * marks a user as deleted by id in database
+     * @param id
+     * @throws DAOException
+     */
     @Override
     public void deleteById(int id) throws DAOException {
         try(ConnectionProxy connectionProxy = Pool.getInstance().takeConnection();
@@ -160,6 +198,11 @@ public class UserDaoImpl implements UserDao {
         }
     }
 
+    /**
+     * restore user by user id
+     * @param id
+     * @throws DAOException
+     */
     public void restoreById(int id) throws DAOException {
         try (ConnectionProxy connectionProxy = Pool.getInstance().takeConnection();
             PreparedStatement statement = connectionProxy.prepareStatement(DELETE_BY_ID)) {

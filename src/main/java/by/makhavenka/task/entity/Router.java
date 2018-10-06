@@ -1,5 +1,9 @@
 package by.makhavenka.task.entity;
 
+/**
+ * class router . Contains Sting page,
+ * Type(enum) type.
+ */
 public class Router {
     private String page;
     private Type type;
@@ -15,6 +19,10 @@ public class Router {
         this.type=type;
     }
 
+    /**
+     * sets forward or redirect, then returns page
+     * @return String
+     */
     public String getPage(){
         if(type.equals(Type.FORWARD)){
             return page;

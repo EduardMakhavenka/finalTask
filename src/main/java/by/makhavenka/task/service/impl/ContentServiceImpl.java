@@ -18,6 +18,14 @@ import by.makhavenka.task.validator.SearchValidator;
 import java.util.*;
 
 public class ContentServiceImpl implements ContentService {
+    /**
+     * method adds comment to database.
+     * use heroDaoImpl and CommentDaoImpl class ,
+     * methods: add, findAllCommentsByHeroId
+     * @param content
+     * @return String
+     * @throws ServiceException
+     */
     @Override
     public String addComment(RequestController content) throws ServiceException {
         int id =(int)content.getSessionAttribute(ServiceConstants.MAIN_ID);
@@ -49,6 +57,13 @@ public class ContentServiceImpl implements ContentService {
      return ServiceConstants.DESCRIPTION;
     }
 
+    /**
+     * method downs hero rating.
+     * use heroDaoImpl  , methods: findById
+     * @param content
+     * @return String
+     * @throws ServiceException
+     */
     @Override
     public String downHeroRating(RequestController content) throws ServiceException {
         int heroId = Integer.parseInt(content.getParameter(ServiceConstants.ID_HERO));
@@ -66,6 +81,13 @@ public class ContentServiceImpl implements ContentService {
         return ServiceConstants.DESCRIPTION;
     }
 
+    /**
+     * method shows description hero.
+     * use heroDaoImpl  , methods: findAllCommentsByHeroId, findImage
+     * @param content
+     * @return String
+     * @throws ServiceException
+     */
     @Override
     public String showDescriptionHero(RequestController content) throws ServiceException {
 
@@ -103,6 +125,13 @@ public class ContentServiceImpl implements ContentService {
         return ServiceConstants.DESCRIPTION;
     }
 
+    /**
+     * method shows mkx content.
+     * use heroDaoImpl  , methods: findAll()
+     * @param content
+     * @return String
+     * @throws ServiceException
+     */
     @Override
     public String showMKXContent(RequestController content) throws ServiceException {
         Dao dao = new HeroDaoImpl();
@@ -123,6 +152,13 @@ public class ContentServiceImpl implements ContentService {
         return ServiceConstants.MKX_JSP;
     }
 
+    /**
+     * method shows mkx content.
+     * use heroDaoImpl  , methods: findAll()
+     * @param content
+     * @return String
+     * @throws ServiceException
+     */
     @Override
     public String showMarvelContent(RequestController content) throws ServiceException {
         Dao dao = new HeroDaoImpl();
@@ -143,6 +179,13 @@ public class ContentServiceImpl implements ContentService {
         return ServiceConstants.MARVEL_JSP;
     }
 
+    /**
+     * method shows rick and morty content.
+     * use heroDaoImpl  , methods: findAll()
+     * @param content
+     * @return String
+     * @throws ServiceException
+     */
     @Override
     public String showRickAndMortyContent(RequestController content) throws ServiceException {
         Dao dao = new HeroDaoImpl();
@@ -163,6 +206,13 @@ public class ContentServiceImpl implements ContentService {
         return ServiceConstants.RICK_JSP;
     }
 
+    /**
+     * method ups hero rating.
+     * use heroDaoImpl  , methods: findById
+     * @param content
+     * @return String
+     * @throws ServiceException
+     */
     @Override
     public String upHeroRating(RequestController content) throws ServiceException {
         int heroId = Integer.parseInt(content.getParameter(ServiceConstants.ID_HERO));
@@ -180,6 +230,13 @@ public class ContentServiceImpl implements ContentService {
         return ServiceConstants.DESCRIPTION;
     }
 
+    /**
+     * method searches hero .
+     * use heroDaoImpl class , methods: searchByName
+     * @param content
+     * @return String
+     * @throws ServiceException
+     */
     @Override
     public String searchHero(RequestController content) throws ServiceException {
         String heroName = content.getParameter(ServiceConstants.SEARCH_HERO);
@@ -198,6 +255,13 @@ public class ContentServiceImpl implements ContentService {
         return ServiceConstants.SEARCH_PAGE;
     }
 
+    /**
+     * method shows author profile .
+     * use userDaoImpl class , methods: findCommentById
+     * @param content
+     * @return String
+     * @throws ServiceException
+     */
     @Override
     public String showAuthorProfile(RequestController content) throws ServiceException {
         int commentId = Integer.parseInt(content.getParameter(ServiceConstants.ID_COMMENT));

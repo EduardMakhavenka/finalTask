@@ -40,6 +40,12 @@ public class CommentDaoImpl implements CommentDao {
 
     private final static String DELETE_COMMENT_BY_ID ="UPDATE finaldb20.comment SET deleted=? WHERE id = ?";
 
+    /**
+     * Find a comment on the user’s hero
+     * @param idUser
+     * @return Map<String,String>
+     * @throws DAOException
+     */
     public Map<String,String> findAllById(int idUser)throws  DAOException{
         String content;
         String name;
@@ -60,6 +66,12 @@ public class CommentDaoImpl implements CommentDao {
         return result;
     }
 
+    /**
+     * Find comment by user id in database
+     * @param id
+     * @return object comment
+     * @throws DAOException
+     */
     @Override
     public Comment findById(int id) throws DAOException {
         Comment comment = null;
@@ -78,6 +90,12 @@ public class CommentDaoImpl implements CommentDao {
         return comment;
     }
 
+    /**
+     * find comment by comments id
+     * @param id
+     * @return object comment
+     * @throws DAOException
+     */
     public Comment findCommentById(int id) throws DAOException {
         Comment comment = null;
         try(ConnectionProxy connectionProxy = Pool.getInstance().takeConnection();
@@ -95,6 +113,11 @@ public class CommentDaoImpl implements CommentDao {
         return comment;
     }
 
+    /**
+     * find all comments in data base
+     * @return list<comment>
+     * @throws DAOException
+     */
     @Override
     public List findAll() throws DAOException {
         List<Comment> result= new ArrayList<>();
@@ -114,6 +137,11 @@ public class CommentDaoImpl implements CommentDao {
         return result;
     }
 
+    /**
+     * add comment to database
+     * @param entity
+     * @throws DAOException
+     */
     @Override
     public void add(Entity entity) throws DAOException {
         Comment comment = (Comment)entity;
@@ -133,6 +161,11 @@ public class CommentDaoImpl implements CommentDao {
         }
     }
 
+    /**
+     * marks a comment as deleted
+     * @param id
+     * @throws DAOException
+     */
     @Override
     public void deleteById(int id) throws DAOException {
         try(ConnectionProxy connectionProxy = Pool.getInstance().takeConnection();

@@ -7,6 +7,7 @@ public class NameUserValidator {
     private NameUserValidator(){}
     public static boolean validate(String userName){
         boolean result = false;
+        if(userName==null){return result;}
         Pattern needed = Pattern.compile(ConstantValidator.TEXT_PATTERN);
         Matcher matcher = needed.matcher(userName);
         if(userName.length()<=20 && matcher.find()==true){

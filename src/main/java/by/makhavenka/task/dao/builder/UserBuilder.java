@@ -10,6 +10,12 @@ import java.sql.SQLException;
 
 public class UserBuilder {
 
+    /**
+     * build object from result set
+     * @param set
+     * @return user
+     * @throws DAOException
+     */
     public User build(ResultSet set) throws DAOException{
         User user ;
         try {
@@ -35,6 +41,13 @@ public class UserBuilder {
         return user;
     }
 
+    /**
+     * fill statement from user object
+     * @param user
+     * @param statement
+     * @return preparedstatement
+     * @throws DAOException
+     */
     public PreparedStatement fillStatement(User user,PreparedStatement statement) throws DAOException{
         try {
             statement.setString(1,user.getName());

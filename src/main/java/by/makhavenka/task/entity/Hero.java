@@ -1,5 +1,12 @@
 package by.makhavenka.task.entity;
 
+
+/**
+ * public class hero extends entity.
+ * Contains int id,String name,
+ * int rating,String description,
+ * String type, int deleted
+ */
 public class Hero extends Entity {
     private int id;
     private String name;

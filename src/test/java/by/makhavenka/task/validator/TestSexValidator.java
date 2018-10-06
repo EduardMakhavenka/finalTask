@@ -28,4 +28,10 @@ public class TestSexValidator {
         String test ="";
         Assert.assertEquals(SexValidator.validate(test),true);
     }
+
+    @Test
+    public void testFiveValidator(){
+        String test =null;
+        Assert.assertEquals(SexValidator.validate(test),false);
+    }
 }

@@ -17,6 +17,12 @@ import java.util.*;
 
 public class SupportServiceImpl implements SupportService {
 
+    /**
+     * method sets and changes locale
+     * @param content
+     * @return String
+     * @throws ServiceException
+     */
     @Override
     public String locale(RequestController content) throws ServiceException {
         content.setSessionAttribute(ServiceConstants.LOGIN_ERROR,null);
@@ -27,6 +33,13 @@ public class SupportServiceImpl implements SupportService {
 
 
 
+    /**
+     * method registers user to database
+     * use UserDaoImpl. method:findAll()
+     * @param content
+     * @return String
+     * @throws ServiceException
+     */
     @Override
     public String registration(RequestController content) throws ServiceException {
         boolean resultOfValidation=true;
@@ -101,12 +114,26 @@ public class SupportServiceImpl implements SupportService {
         }
     }
 
+
+    /**
+     * Check out user and invalidate session
+     * @param content
+     * @return String
+     * @throws ServiceException
+     */
     @Override
     public String logout(RequestController content) throws ServiceException {
         content.setSessionInvalidateFlag(true);
         return ServiceConstants.HOME;
     }
 
+    /**
+     * show user profile
+     * use UserDaoImpl() and CommentDaoImpl(), method:findAllById, findById
+     * @param content
+     * @return String
+     * @throws ServiceException
+     */
     @Override
     public String showProfile(RequestController content)throws ServiceException {
 
